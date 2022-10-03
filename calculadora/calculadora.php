@@ -8,30 +8,21 @@
 </head>
 <body>
     <?php
+
+    require 'auxiliar.php';
+
     $operador1 = trim($_GET['operador1']);
     $operador2 = trim($_GET['operador2']);
     $operando = trim($_GET['operando']);
+    $resultado = calcular_resultado($operador1, $operador2, $operando)
 
-    switch  ($operando) {
-        case '+':
-            $resultado = $operador1 + $operador2;
-            break;
-        case '-':
-            $resultado = $operador1 - $operador2;
-            break;
-        case '*':
-            $resultado = $operador1 * $operador2;
-            break;
-        case '/':
-            $resultado = $operador1 / $operador2;
-            break;
-
-        default:
-            $resultado = "Error: operación incorrecta.";
-    }
     ?>
+    
 
-    <p>El resultado de <?= "$operador1 $operando $operador2" ?> es <?= $resultado ?> </p>
+    <p>
+        El resultado de <?= "$operador1 $operando $operador2" ?> es <?= $resultado?> 
+    </p>
     
 </body>
+
 </html>
